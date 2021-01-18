@@ -1,0 +1,6 @@
+org/hibernate/HibernateUtil.class
+org/models/Person.class
+org/services/PersonService.class
+org/interfaces/InterfacePersonService.class
+org/controllers/PersonController.class
+org/hibernate/Conexion.class

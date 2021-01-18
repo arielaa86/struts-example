@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+
+    <package name="myPackage" extends="struts-default">
+
+        <default-action-ref name="index"/>
+
+        <action name="index" class="org.controllers.PersonController" method="create">
+            <result>/WEB-INF/jsp/person/create.jsp</result>
+        </action>
+
+
+        <action name="createPerson" class="org.controllers.PersonController" method="create">
+            <result>/WEB-INF/jsp/person/create.jsp</result>
+        </action>
+
+        <action name="savePerson" class="org.controllers.PersonController" method="save">
+            <exception-mapping exception="java.lang.Exception" result="error" />
+            <result name="error">/WEB-INF/jsp/person/error.jsp</result>
+            <result name="success">/WEB-INF/jsp/person/show.jsp</result>
+        </action>
+
+
+
+
+
+
+
+<!-- redirect
+
+        <action name="savePerson" class="org.controllers.PersonController" method="save">
+            <exception-mapping exception="java.lang.Exception" result="error" />
+            <result>/WEB-INF/jsp/person/error.jsp</result>
+            <result name="success">/WEB-INF/jsp/person/show.jsp</result>
+            <result name="error" type="redirect">
+                <param name = "location">
+                    /WEB-INF/jsp/person/error.jsp
+                </param >
+            </result>
+        </action>
+
+-->
+
+
+        <!--
+                <action name="guardar" class="org.controllers.PersonController">
+                    <result>/WEB-INF/jsp/persona/create.jsp</result>
+                </action>
+          -->
+
+    </package>
+
+</struts>
